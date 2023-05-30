@@ -1,0 +1,76 @@
+# ------------------------------------
+#             一、下载代码
+# ------------------------------------
+nohup bash Aria2c_fastq.sh 1 01-PRJNA722042-3-single.txt temp_file1 >Aria2c_log1 2>&1 &
+nohup bash Aria2c_fastq.sh 1 02-PRJNA521955-8-single.txt temp_file2 >Aria2c_log2 2>&1 &
+nohup bash Aria2c_fastq.sh 2 03-PRJEB33335-12-paired.txt temp_file3 >Aria2c_log3 2>&1 &
+nohup bash Aria2c_fastq.sh 2 04-PRJNA722042-14-paired.txt temp_file4 >Aria2c_log4 2>&1 &
+nohup bash Aria2c_fastq.sh 2 05-PRJNA752081-20-paired.txt temp_file5 >Aria2c_log5 2>&1 &
+nohup bash Aria2c_fastq.sh 1 06-PRJNA595551-34-single.txt temp_file6 >Aria2c_log6 2>&1 &
+nohup bash Aria2c_fastq.sh 2 07-PRJNA274751-34-paired.txt temp_file7 >Aria2c_log7 2>&1 &
+nohup bash Aria2c_fastq.sh 2 08-PRJEB35689-48-paired.txt temp_file8 >Aria2c_log8 2>&1 &
+nohup bash Aria2c_fastq.sh 2 09-PRJNA664615-59-paired.txt temp_file9 >Aria2c_log9 2>&1 &
+nohup bash Aria2c_fastq.sh 1 10-PRJNA421730-80-single.txt temp_file10 >Aria2c_log10 2>&1 &
+nohup bash Aria2c_fastq.sh 1 11-PRJNA531691-88-single.txt temp_file11 >Aria2c_log11 2>&1 &
+nohup bash Aria2c_fastq.sh 1 12-PRJNA281708-285-single.txt temp_file12 >Aria2c_log12 2>&1 &
+nohup bash Aria2c_fastq.sh 2 13-PRJNA737596-322-paired.txt temp_file13 >Aria2c_log13 2>&1 &
+nohup bash Aria2c_fastq.sh 1 14-PRJNA353588-779-single.txt temp_file14 >Aria2c_log14 2>&1 &
+nohup bash Aria2c_fastq.sh 1 15-PRJNA659491-804-single.txt temp_file15 >Aria2c_log15 2>&1 &
+nohup bash Aria2c_fastq.sh 1 16-PRJNA761450-2351-single.txt temp_file16 >Aria2c_log16 2>&1 &
+# ------------------------------------
+#           二、fastQC运行代码
+# ------------------------------------
+nohup bash fastQC.sh 01-PRJNA722042-3-single >fastQC_log1 2>&1 &
+nohup bash fastQC.sh 02-PRJNA521955-8-single >fastQC_log2 2>&1 &
+nohup bash fastQC.sh 03-PRJEB33335-12-paired >fastQC_log3 2>&1 &
+nohup bash fastQC.sh 04-PRJNA722042-14-paired >fastQC_log4 2>&1 &    
+nohup bash fastQC.sh 05-PRJNA752081-20-paired >fastQC_log5 2>&1 &  
+nohup bash fastQC.sh 06-PRJNA595551-34-single >fastQC_log6 2>&1 &
+nohup bash fastQC.sh 07-PRJNA274751-34-paired >fastQC_log7 2>&1 & 
+nohup bash fastQC.sh 08-PRJEB35689-48-paired >fastQC_log8 2>&1 &
+nohup bash fastQC.sh 09-PRJNA664615-59-paired >fastQC_log9 2>&1 &
+nohup bash fastQC.sh 10-PRJNA421730-80-single >fastQC_log10 2>&1 &
+nohup bash fastQC.sh 11-PRJNA531691-88-single >fastQC_log11 2>&1 &
+nohup bash fastQC.sh 12-PRJNA281708-285-single >fastQC_log12 2>&1 &
+nohup bash fastQC.sh 13-PRJNA737596-322-paired >fastQC_log13 2>&1 &
+nohup bash fastQC.sh 14-PRJNA353588-779-single >fastQC_log14 2>&1 &
+nohup bash fastQC.sh 15-PRJNA659491-804-single >fastQC_log15 2>&1 &
+nohup bash fastQC.sh 16-PRJNA761450-2351-single >fastQC_log16 2>&1 &
+# ------------------------------------
+#          三、最终运行代码
+# ------------------------------------
+nohup bash Transcriptome_upstream_analysis.sh 1 01-PRJNA722042-3-single 3 47 >log1 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 1 02-PRJNA521955-8-single 7 1 75 >log2 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 2 03-PRJEB33335-12-paired 3 75 >log3 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 2 04-PRJNA722042-14-paired 10 140 >log4 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 2 05-PRJNA752081-20-paired 10 140 >log5 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 1 06-PRJNA595551-34-single 3 47 >log6 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 2 07-PRJNA274751-34-paired 0 75 >log7 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 2 08-PRJEB35689-48-paired 2 75 >log8 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 2 09-PRJNA664615-59-paired 10 140 >log9 2>&1 &          
+nohup bash Transcriptome_upstream_analysis.sh 1 10-PRJNA421730-80-single 3 97 >log10 2>&1 &        
+nohup bash Transcriptome_upstream_analysis.sh 1 11-PRJNA531691-88-single 3 47 >log11 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 1 12-PRJNA281708-285-single 3 97 >log12 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 2 13-PRJNA737596-322-paired 5 97 >log13 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 1 14-PRJNA353588-779-single 3 97 >log14 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 1 15-PRJNA659491-804-single 3 97 >log15 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 1 16-PRJNA761450-2351-single 3 97 >log16 2>&1 &
+# ------------------------------------
+#          三、最终运行代码
+# ------------------------------------
+nohup bash Transcriptome_upstream_analysis.sh 1 01-PRJNA722042-3-single 3 47 >log1 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 1 02-PRJNA521955-8-single 7 1 75 >log2 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 2 03-PRJEB33335-12-paired 3 75 >log3 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 2 04-PRJNA722042-14-paired 10 140 >log4 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 2 05-PRJNA752081-20-paired 10 140 >log5 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 1 06-PRJNA595551-34-single 3 47 >log6 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 2 07-PRJNA274751-34-paired 0 75 >log7 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 2 08-PRJEB35689-48-paired 2 75 >log8 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 2 09-PRJNA664615-59-paired 10 140 >log9 2>&1 &          
+nohup bash Transcriptome_upstream_analysis.sh 1 10-PRJNA421730-80-single 3 97 >log10 2>&1 &        
+nohup bash Transcriptome_upstream_analysis.sh 1 11-PRJNA531691-88-single 3 47 >log11 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 1 12-PRJNA281708-285-single 3 97 >log12 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 2 13-PRJNA737596-322-paired 5 97 >log13 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 1 14-PRJNA353588-779-single 3 97 >log14 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 1 15-PRJNA659491-804-single 3 97 >log15 2>&1 &
+nohup bash Transcriptome_upstream_analysis.sh 1 16-PRJNA761450-2351-single 3 97 >log16 2>&1 &
