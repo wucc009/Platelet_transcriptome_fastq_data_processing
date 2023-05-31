@@ -16,7 +16,7 @@
 ---
 3. 通过调用Aria2c_fastq.sh脚本进行下载：
 
-`nohup bash Aria2c_fastq.sh 1 01-PRJNA722042-3-single.txt temp_file1 >Aria2c_log1 2>&1 &`
+> `nohup bash Aria2c_fastq.sh 1 01-PRJNA722042-3-single.txt temp_file1 >Aria2c_log1 2>&1 &`
 - 1：单端（2即双端）
 - 01-PRJNA722042-3-single.txt：第一步下载的文件
 - temp_file1：程序运行中的临时文件夹
@@ -25,7 +25,7 @@
 - fastq代码不小心删了（自己写一个很简单）
 - 之后调用fastQC.sh
 
-`nohup bash fastQC.sh 01-PRJNA722042-3-single.txt log1 2>&1 &`
+> `nohup bash fastQC.sh 01-PRJNA722042-3-single.txt log1 2>&1 &`
 - 根据fastQC结果最后使用Transcriptome_upstream_analysis.sh中的fastp进行质控
 ---
 5. 调用Transcriptome_upstream_analysis.sh脚本：
@@ -34,6 +34,6 @@
 - 进行BWA比对
 - 进行CIRI2获取circRNA表达数据
 
-`nohup bash Transcriptome_upstream_analysis.sh 1 01-PRJNA722042-3-single 3 47 >log1 2>&1 &`
+> `nohup bash Transcriptome_upstream_analysis.sh 1 01-PRJNA722042-3-single 3 47 >log1 2>&1 &`
 - 3:fastp对f端修剪长度
 - 47:star中参数--sjdbOverhang的值，默认值是100，理想值为read长度减1，这边采用read长度减1
